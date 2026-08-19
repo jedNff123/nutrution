@@ -1,0 +1,22 @@
+{
+  "name": "NutriVision AI - Calorie & Diet Coach",
+  "short_name": "NutriVision",
+  "description": "Application intelligente de calcul des calories, scan d'aliments par IA et programme nutritionnel",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0f19",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

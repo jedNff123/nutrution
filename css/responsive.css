@@ -1,0 +1,59 @@
+/* ==========================================================================
+   NutriVision AI - Responsive & Mobile Layout Styles
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .app-container {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .app-main {
+    padding: 12px 14px 84px;
+  }
+
+  .camera-viewfinder-card {
+    height: 300px;
+  }
+
+  .macros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gauge-value {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --max-app-width: 500px;
+  }
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--primary-glow);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(16, 185, 129, 0.45);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Print / Standalone adjustments */
+@media all and (display-mode: standalone) {
+  .app-header {
+    padding-top: max(16px, env(safe-area-inset-top));
+  }
+  .bottom-nav {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    height: calc(72px + env(safe-area-inset-bottom));
+  }
+}

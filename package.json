@@ -1,0 +1,30 @@
+{
+  "name": "nutrivision-ai",
+  "version": "1.0.0",
+  "description": "NutriVision AI - Application intelligente de calcul des calories, scan d'aliments par IA et programme nutritionnel",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "cap:sync": "npx cap sync",
+    "cap:android": "npx cap open android",
+    "cap:ios": "npx cap open ios"
+  },
+  "keywords": [
+    "nutrition",
+    "calories",
+    "ai",
+    "gemini",
+    "vision",
+    "diet",
+    "fitness",
+    "meal-planner"
+  ],
+  "author": "NutriVision Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/ios": "^6.0.0"
+  }
+}
