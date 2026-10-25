@@ -6,7 +6,7 @@
 import { appState } from './state.js';
 import { CountryFoodDatabase } from './country-foods.js';
 import { MetabolicCalculator } from './calculator.js';
-import { WorkoutScheduleService } from './workout-schedule.js';
+import { MealPlannerService } from './meal-planner.js';
 import { AlarmService } from './alarm-service.js';
 
 export const OnboardingManager = {
@@ -282,12 +282,18 @@ export const OnboardingManager = {
       alarmsEnabled: this.formData.alarmsEnabled
     });
 
-    // Generate synchronized timeline & workout plan
-    appState.updateWorkoutAndTimeline();
+    const mealPlan = MealPlannerService.generatePlan(
+      appState.metabolism.targetCalories,
+      appState.metabolism,
+      'mediterranean'
+    );
+    appState.saveMealPlan(mealPlan);
 
     // Play welcome chime
     AlarmService.playAlarmChime();
 
     this.close();
+    document.querySelector('[data-subview="meals"]')?.click();
+    document.querySelector('.nav-item[data-tab="mealplan"]')?.click();
   }
 };

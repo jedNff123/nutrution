@@ -127,7 +127,9 @@ class StateManager {
   // Update profile
   updateProfile(newProfileData) {
     this.profile = { ...this.profile, ...newProfileData };
-    this.profile.currency = CountryFoodDatabase.getCurrency(this.profile.country);
+    const country = CountryFoodDatabase.countries.find(c => c.code === this.profile.country)
+      || CountryFoodDatabase.countries[0];
+    this.profile.currency = country.currency;
     this.metabolism = MetabolicCalculator.evaluateProfile(this.profile);
     this.updateWorkoutAndTimeline();
     localStorage.setItem(STORAGE_KEY_PROFILE, JSON.stringify(this.profile));
